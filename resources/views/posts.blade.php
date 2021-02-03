@@ -20,6 +20,9 @@
             <td>{{$post->title}}</td>
             <td>{{$post->author}}</td>
 
+
+            {{-- BUG RELATIVO ALLA VISUALIZZAZIONE DELLA CATEGORIA DEL POST. 
+            TENTATIVO 1: NESTARE UN FOREACH --}}
             @foreach( $categories as $category )
             <td>{{$category->title}}</td>
             @endforeach
