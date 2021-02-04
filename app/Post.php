@@ -9,10 +9,14 @@ class Post extends Model
     protected $table = 'posts';
 
     public function post() {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Category', 'category_id', 'id');
     }
 
     public function postInformation() {
-        return $this->hasOne(PostInformation::class);
+        return $this->hasOne('App\PostInformation', 'post_id', 'id');
+    }
+
+    public function tags() {
+        return $this->belongsToMany('App\Tag');
     }
 }
