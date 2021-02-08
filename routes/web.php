@@ -17,6 +17,6 @@ Route::resource('/', 'CategoryController');
 
 Route::resource('/post', 'PostController');
 
-Route::resource('/postinformation/{id}', 'PostInformationController');
+// Route::resource('/postinformation/{id}', 'PostInformationController');
 
-
+Route::resource('/tag', 'TagController');

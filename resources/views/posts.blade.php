@@ -12,6 +12,7 @@
             <th scope="col">Author</th>
             <th scope="col">Category</th>
             <th scope="col">Description</th>
+            <th scope="col">Details</th>
           </tr>
         </thead>
         <tbody>
@@ -21,23 +22,27 @@
             <td>{{$post->title}}</td>
             <td>{{$post->author}}</td>
             <td>{{$post->post->title}}</td>
-
+            
+            
             @if ($post->postInformation == null)
-                <td>No Data</td>
+            <td>No Data</td>
             @else
-                <td>{{$post->postInformation->description}}</td>
+            <td>{{$post->postInformation->description}}</td>
             @endif
 
+            <td>
+              <a href="{{route('post.show', $post->id)}}">Dettagli</a>
+            </td>
 
+            <td>
+              <a href="{{route('post.show', $post->id)}}">Aggiorna</a>
+            </td>
 
-            {{-- BUG RELATIVO ALLA VISUALIZZAZIONE DELLA CATEGORIA DEL POST. 
-            TENTATIVO 1: NESTARE UN FOREACH --}}
-            {{-- @foreach( $categories as $category )
-            <td>{{$category->title}}</td>
-            @endforeach --}}
-
-            {{-- {{dd($post->category)}} --}}
-          </tr>
+            <td>
+              <a href="{{route('post.show', $post->id)}}">Elimina</a>
+            </td>
+            
+        </tr>
           @endforeach
         </tbody>
       </table>
